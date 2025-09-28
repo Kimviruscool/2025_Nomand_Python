@@ -1,0 +1,37 @@
+my_name = "bee"
+my_age = 12
+my_color_eyes = "brown"
+
+f"{}" #format f포맷팅
+f" hello i'm {my_name}, i have {my_age} years in the earth, {my_color_eyes} is my eye color"
+
+#f포맷팅에서는 f"{변수명}"의 규칙을 지켜야 한다.
+
+주스 만들기
+def make_juice(fruit):
+    return f"{fruit} + 🥤"
+
+def add_ice(juice):
+    return f"{juice} + 🧊"
+
+def add_sugar(iced_juice):
+    return f"{iced_juice}+ 🍬"
+
+juice = make_juice("🍎")
+cold_juice = add_ice(juice)
+perfect_juice = add_sugar(cold_juice)
+
+print(perfect_juice)
+
+#flow / 순서도
+# make_juice 기능을 호출하여 '사과'를 전달(argument)
+# make_juice 에서 전달된 '사과'를(parameter) '+ 주스' 하여 반환
+# 반환된 '사과주스' 를 juice 변수에 저장
+# add_ice 기능을 호출 하여 juice 변수의 값을 전달(argument)
+# add_ice 에서  전달된 '사과주스'를(parameters) + 얼음  하여 반환
+# 반환된 '사과주스얼음' 을 cold_juice 변수에 저장
+# add_sugar 기능을 호출하여 cold_juice 변수에 값을 전달(arguments)
+# add_sugar 에서 전달된 '사과주스얼음'를 (parameters) + '사탕' 하여 반환
+# 반환된 '사과주스얼음사탕' 을 perfect_juice 변수에 저장
+# print 출력 기능 호출 perfect_juice 변수를 전달(arguments)
+# 출력 : '사과주스얼음사탕'
