@@ -80,5 +80,22 @@ print(week);
 week.clear() #clear 하기
 print(week);
 
+#dic
+player = {
+    'name' : 'bee',
+    'age' : 22,
+    'gender' : 'male',
+    'alive' : True,
+    'favFood' : ["🍎","🍔"]
+}
 
-#tuple
+print(player);
+print(player.get('name'));
+print(player.get('favFood'));
+print(player['favFood'][1]);
+player.pop('gender'); # DIC 지우기
+print(player);
+player['xp'] = 15000;
+print(player);
+player['favFood'].append("🥚");
+print(player['favFood']);
