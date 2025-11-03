@@ -8,11 +8,16 @@
 from playwright.sync_api import sync_playwright
 import time
 from bs4 import BeautifulSoup
+import csv
 
 #time 모듈 시간 추가
 p = sync_playwright().start()
 print("P success")
 
+
+# page.screenshot(path="screenshot.png") #png타입으로 저장 page를 찍어옴
+
+#headless mode 컴퓨터에서 브라우저를 호출만 하는것 #headless=True를 하면 코드내에서 진행 False 로하면 브라우저를 직접 키고 이후 스크린샷을찍은후에 자동종료
 
 browser = p.chromium.launch(headless=False) #p.chromiun#크롬으로 .launch()#초기화
 
@@ -69,6 +74,10 @@ for job in jobs:
 print(jobs_db)
 print(len(jobs_db))
 
-# page.screenshot(path="screenshot.png") #png타입으로 저장 page를 찍어옴
+#가져온 데이터 csv파일 변환
+file = open("jobs.csv",mode="w",encoding="utf-8",newline="") #저장할파일명,"파일모드("w 쓰기" , "r 읽기")
+writter = csv.writer(file)
+writter.writerow(["title","company_name","link"])
 
-#headless mode 컴퓨터에서 브라우저를 호출만 하는것 #headless=True를 하면 코드내에서 진행 False 로하면 브라우저를 직접 키고 이후 스크린샷을찍은후에 자동종료
+for job in jobs_db:
+    writter.writerow(job.values())
