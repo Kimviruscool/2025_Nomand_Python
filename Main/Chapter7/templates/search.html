@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Scrapper</title>
+</head>
+<body>
+ <h1>Search Results : "{{keyword}}" </h1>
+    {% for job in jobs %}
+        <div> {{job.link}}</div>
+    {% endfor %}
+ </form>
+</body>
+</html>
