@@ -93,7 +93,7 @@ def extract_indeed_job(keyword):
 
 def get_page_count(keyword):
     print(keyword)
-    browser.get(f"https://kr.indeed.com/jobs?q={keyword}&limit=50")
+    browser.get(f"https://kr.indeed.com/jobs?q={keyword}&start=50")
     soup = BeautifulSoup(browser.page_source, "html.parser")
     pagination = soup.find("nav", role="navigation")
 
