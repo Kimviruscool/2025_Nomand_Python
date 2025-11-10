@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Job Scrapper</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 </head>
 <body>
  <h1>Search Results : "{{keyword}}" </h1>
-    {% for job in jobs %}
-        <div> {{job.link}}</div>
-    {% endfor %}
- </form>
+ <table>
+     <thead>
+        <tr>
+            <th>link</th>
+        </tr>
+     </thead>
+
+     <tbody>
+        {% for job in jobs %}
+        <tr>
+            <td> {{job.link}}</td>
+        </tr>
+        {% endfor %}
+     </tbody>
+ </table>
+
 </body>
 </html>
